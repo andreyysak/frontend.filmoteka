@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Filmoteka** is a learning project for studying Angular: a movie catalog on the real TMDB API (`developer.themoviedb.org`) with search, movie and person pages, and a personal watchlist with ratings and notes. The user writes in Ukrainian.
 
-It is built step by step from the course plan in `/home/andreyysak/Downloads/practice-angular.md`, **Part 1 only** (Steps 01–24, one Angular topic per step). Part 2 of that file (the final project "Stayzy") is **out of scope for this repo**. Ignore it.
+It is built step by step from the course plan in `docs/practice-angular.md`, **Part 1 only** (Steps 01–24, one Angular topic per step). Part 2 of that file (the final project "Stayzy") is **out of scope for this repo**. Ignore it.
 
 - Each step has **Основне** (required), **Ускладнення** (optional extras) and **Перевір себе** (self-check questions). Steps build on each other, so do them in order.
 - The goal is for the user to learn. Unless they ask for a full implementation, explain things, give hints and review their code instead of writing the whole step for them. The plan asks them to try on their own for 20–30 minutes before looking at a solution.
