@@ -1,0 +1,37 @@
+.page-title {
+  font-weight: 700;
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-tight);
+}
+
+.content-title {
+  font-weight: 700;
+  font-size: var(--fs-xl);
+  line-height: var(--lh-tight);
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+}
+
+.text {
+  font-weight: 400;
+  font-size: var(--fs-md);
+  line-height: var(--lh-base);
+}
+
+.label {
+  font-weight: 500;
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--lh-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
