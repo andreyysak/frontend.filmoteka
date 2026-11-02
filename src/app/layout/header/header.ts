@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Header {}
+export class Header {
+  @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
+
+  focusSearch(): void {
+    this.searchInput.nativeElement.focus();
+  }
+}

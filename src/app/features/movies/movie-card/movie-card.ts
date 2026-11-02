@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Movie } from '../../../shared/models/movie.model';
-import { MOCK_MOVIES } from '../movies.mock';
 
 @Component({
   selector: 'app-movie-card',
@@ -11,9 +10,12 @@ import { MOCK_MOVIES } from '../movies.mock';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieCard {
-  movie: Movie = MOCK_MOVIES[0];
+  movie = input.required<Movie>();
+  addToWatchlist = output<Movie>();
 
-  get posterUrl(): string {
-    return 'https://image.tmdb.org/t/p/w500' + this.movie.poster_path;
+  posterUrl = computed(() => 'https://image.tmdb.org/t/p/w500' + this.movie().poster_path);
+
+  onAddToWatchlist(): void {
+    this.addToWatchlist.emit(this.movie());
   }
 }

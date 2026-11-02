@@ -1,10 +1,20 @@
-<a href="#" class="movie-card">
+<div class="movie-card">
   <div class="movie-card__poster">
-    <img class="movie-card__img" [src]="posterUrl" [alt]="movie.title" loading="lazy" />
-    <span class="movie-card__rate">★ {{ movie.vote_average | number: '1.1-1' }}</span>
+    <img class="movie-card__img" [src]="posterUrl()" [alt]="movie().title" loading="lazy" />
+    <span class="movie-card__rate">★ {{ movie().vote_average | number: '1.1-1' }}</span>
   </div>
   <div class="movie-card__info">
-    <h3 class="movie-card__title">{{ movie.title }}</h3>
-    <span class="movie-card__year">{{ movie.release_date.slice(0, 4) }}</span>
+    <div class="movie-card__info-main">
+      <h3 class="movie-card__title">{{ movie().title }}</h3>
+      <span class="movie-card__year">{{ movie().release_date.slice(0, 4) }}</span>
+    </div>
+    <button
+      type="button"
+      class="movie-card__add"
+      (click)="onAddToWatchlist()"
+      aria-label="Додати {{ movie().title }} до списку переглянути пізніше"
+    >
+      +
+    </button>
   </div>
-</a>
+</div>

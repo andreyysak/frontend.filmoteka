@@ -12,4 +12,8 @@ import { MOCK_MOVIES } from '../movies.mock';
 })
 export class MovieList {
   movies: Movie[] = MOCK_MOVIES;
+
+  addToWatchlist(movie: Movie): void {
+    console.log(`${movie.title} added to watch list`);
+  }
 }
