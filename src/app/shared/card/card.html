@@ -1,0 +1,6 @@
+<div class="card" [class.card--highlighted]="highlighted()">
+  @if (title()) {
+    <ng-content select="[card-title]" />
+  }
+  <ng-content />
+</div>

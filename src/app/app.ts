@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './layout/header/header';
 import { Footer } from './layout/footer/footer';
 import { MovieList } from './features/movies/movie-list/movie-list';
+import { Card } from './shared/card/card';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Footer, MovieList],
+  imports: [RouterOutlet, Header, Footer, MovieList, Card],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -3,6 +3,26 @@
   <app-movie-list />
   <router-outlet />
 
-  <button type="button" class="main__scroll-btn" (click)="scrollToTop()" aria-label="Прокрутити вгору">↑</button>
+  <app-card highlighted>
+    <h3 card-title #cardTitleRef>Завдання 3.5</h3>
+    <p>Тестовий вміст</p>
+  </app-card>
+  <app-card [highlighted]="false">
+    <h3 card-title #cardTitleRef>Завдання 3.5</h3>
+    <p>Тестовий вміст</p>
+  </app-card>
+  <app-card>
+    <h3 card-title #cardTitleRef>Завдання 3.5</h3>
+    <p>Тестовий вміст</p>
+  </app-card>
+
+  <button
+    type="button"
+    class="main__scroll-btn"
+    (click)="scrollToTop()"
+    aria-label="Прокрутити вгору"
+  >
+    ↑
+  </button>
 </main>
 <app-footer />
