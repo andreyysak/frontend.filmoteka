@@ -14,6 +14,8 @@ export class MovieCard {
   addToWatchlist = output<Movie>();
 
   posterUrl = computed(() => 'https://image.tmdb.org/t/p/w500' + this.movie().poster_path);
+  year = computed(() => this.movie().release_date.slice(0, 4));
+  addLabel = computed(() => `Додати ${this.movie().title} до списку переглянути пізніше`);
 
   onAddToWatchlist(): void {
     this.addToWatchlist.emit(this.movie());

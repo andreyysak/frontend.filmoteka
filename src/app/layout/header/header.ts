@@ -13,4 +13,14 @@ export class Header {
   focusSearch(): void {
     this.searchInput.nativeElement.focus();
   }
+
+  search(value: string): void {
+    console.log(value);
+  }
+
+  searchWithEnter(event: KeyboardEvent, value: string): void {
+    if (event.key === 'Enter') {
+      console.log(value);
+    }
+  }
 }
