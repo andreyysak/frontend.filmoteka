@@ -1,5 +1,5 @@
 <div class="movie-list">
   @for (movie of movies; track movie.id) {
-    <app-movie-card [movie]="movie" (addToWatchlist)="addToWatchlist($event)" />
+  <app-movie-card [movie]="movie" [watchLaterList]="watchLaterList()" (addToWatchlist)="addToWatchlist($event)" />
   }
 </div>

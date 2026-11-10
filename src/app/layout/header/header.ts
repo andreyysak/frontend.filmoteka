@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, signal, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,17 +11,19 @@ import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angu
 export class Header {
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
 
+  query = signal('');
+
   focusSearch(): void {
     this.searchInput.nativeElement.focus();
   }
 
-  search(value: string): void {
-    console.log(value);
+  search(): void {
+    console.log(this.query());
   }
 
-  searchWithEnter(event: KeyboardEvent, value: string): void {
+  searchWithEnter(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
-      console.log(value);
+      console.log(this.query());
     }
   }
 }

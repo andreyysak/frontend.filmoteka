@@ -1,10 +1,10 @@
 @let title = movie().title;
 @let rating = movie().vote_average;
 
-<div class="movie-card">
+<div class="movie-card" [attr.data-id]="movie().id">
   <div class="movie-card__poster">
     <img class="movie-card__img" [src]="posterUrl()" [alt]="title" loading="lazy" />
-    <span class="movie-card__rate">★ {{ rating | number: '1.1-1' }}</span>
+    <span class="movie-card__rate" [class.is-top]="isTop()">★ {{ rating | number: '1.1-1' }}</span>
   </div>
   <div class="movie-card__info">
     <div class="movie-card__info-main">
@@ -12,7 +12,7 @@
       <span class="movie-card__year">{{ year() }}</span>
     </div>
     <button type="button" class="movie-card__add" (click)="onAddToWatchlist()"
-      [attr.aria-label]="addLabel()">
+      [attr.aria-label]="addLabel()" [disabled]="isInList()">
       +
     </button>
   </div>
